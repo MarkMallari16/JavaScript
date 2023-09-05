@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="rock-paper-scissors.png">
+    <title>Rock Paper Scissor Game</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <div class="container text-center mt-2">
+        <div class="header fs-1 fw-bold">Rock Paper Scissor Game✊✋✌️</div>
+        <span>Created by Mark Mallari</span>
+        <div class="score-txt text-center mt-2">Scores</div>
+        <div class="score d-flex justify-content-center text-center">
+
+            <div class="scoreTxt userScore me-3 bg-success px-4 py-2 rounded">User:<span id="userScore">0</span></div>
+            <div class="scoreTxt tie me-3 bg-secondary px-4 py-2 rounded">Tie:<span id="tieScore">0</span></div>
+            <div class="scoreTxt computerScore bg-danger px-4 py-2 rounded">Computer:<span id="computerScore">0</span>
+            </div>
+
+        </div>
+        <div class="container-lg emoji rounded">
+            <div class="user row justify-content-center g-5">
+                <div class="col-lg-4  col-md-6 userSide">
+                    <p class="headerTxt">User</p>
+                    <span class="emoji emoji1 rounded " id="emoji1">?</span>
+                </div>
+                <div class="col-lg-4 col-md-5 vs-text ">
+                    <span class="vsTxt">vs</span>
+                </div>
+                <div class="col-lg-4 col-md-6 computerSide">
+                    <p class="headerTxt">Computer</p>
+                    <span class="emoji emoji2  rounded " id="emoji2">?</span>
+                </div>
+            </div>
+        </div>
+        <div class="child-container d-flex flex-column justify-content-center align-items-center">
+            <span class="fs-4 ">Choose Your Choice</span>
+            <div class="button1 d-flex">
+
+                <button id="rockBtn" class="btn btn-primary px-4 text-wrap w-100 me-2">✊</button>
+
+                <button id="paperBtn" class="btn btn-secondary px-4 text-wrap w-50 me-2">✋</button>
+                <button id="scissorBtn" class="btn btn-success px-4 text-wrap w-50 ">✌️</button>
+            </div>
+            <div class="button2 d-flex ">
+                <button class="btn btn-danger mt-2 me-2" onclick="resetAll()">Reset</button>
+                <button class="autoPlayBtn btn btn-info mt-2 " onclick="autoPlay()">Auto Play</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--Js Code-->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

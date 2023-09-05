@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do-list</title>
+    <link rel="icon" href="/Projects/To-do-List-Updated/icon/note-sticky-regular.svg">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/cb37e64477.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="field">
+            <header>
+                <h1>To-do List</h1>
+                <span id="js-date-txt"></span>
+
+            </header>
+
+            <div class="field-1">
+                <input type="text" id="inputField" placeholder="Enter Task" maxlength="20"
+                    onkeydown="pressEnter(event)">
+                <button id="button" onclick="addBtn()"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div class="task-text-container">
+                <h3 class="task-list-txt"></h3>
+            </div>
+            <div class="js-task-list">
+                <div class="child-task js-task-list-child"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="date.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+{
+    "name": "Simple Calculation Extension",
+    "description": "A simple calculation created by Mark Mallari",
+    "version": "1.0",
+    "manifest_version": 3,
+    "icons": {
+        "128":"calculator.png"
+    },
+    "action" : {
+        "default_popup" : "index.html",
+        "default_icon" : {
+            "128" : "calculator.png"
+        }
+    }
+}

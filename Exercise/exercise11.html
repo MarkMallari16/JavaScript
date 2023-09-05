@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Letter</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+    }
+
+    :root {
+        --txt-color: #000;
+        --accent: #BEADFA;
+    }
+
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #inputField1,
+    #btn {
+        border-radius: 6px;
+    }
+
+    label {
+        display: block;
+    }
+
+    #inputField1 {
+        width: 100%;
+        padding: 14px 24px;
+    }
+
+    #btn {
+        width: 100%;
+        border: none;
+        padding: 16px 24px;
+        color: var(--txt-color);
+        background-color: var(--accent);
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .result-container {
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div class="container">
+
+        <div class="input-field">
+            <h1 id="header">Check Consonant or Vowels</h1>
+            <label for="inputField1">Enter Letter</label>
+            <input type="text" name="inputField1" id="inputField1" maxlength="1">
+            <button id="btn">Check</button>
+            <div class="result-container">
+                <span id="result"></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", event => {
+            const inputField = document.getElementById("inputField1");
+            const inputValue = inputField.value.toString();
+
+            const resultTxt = document.getElementById("result");
+            const vowels = ['a', 'e', 'i', 'o', 'u'];
+            let isVowel = false;
+
+            if (isNaN(inputValue)) {
+                vowels.forEach(element => {
+                    if (inputValue.toLowerCase() === element) {
+                        isVowel = true;
+                    }
+                });
+
+                if (isVowel) {
+                    resultTxt.innerHTML = `${inputValue} is a vowel letter`;
+                } else {
+                    resultTxt.innerHTML = `${inputValue} is a consonant letter`;
+                }
+
+            } else {
+                alert('You must input a letter!');
+            }
+            inputField.value = "";
+        });
+
+        const inputField = document.getElementById("inputField1");
+        inputField.addEventListener("keydown", event => {
+            if (event.key === "Enter") {
+                btn.click();
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

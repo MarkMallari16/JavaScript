@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 9</title>
+</head>
+
+<body>
+    <script>
+        //Task 1
+        // const displayNumbers = (numbers) => {
+        //     numbers[2] = 99;
+        //     return numbers;
+        // }
+        // const numbers = [10,20,30];
+        // console.log(displayNumbers(numbers));
+
+        //Task 2
+        // const getLastValue = (array) =>{
+        //     const lastValue = array[array.length-1];
+
+        //     console.log(lastValue);
+        // }
+        // getLastValue(["tinola","adobo","sinigang","tilapia","tae"])
+
+
+        //Task 3
+        // const arraySwap = (array) =>{
+        //     const firstValue = array[0];
+        //     const lastValue = array[array.length-1];
+
+        //     array[0] = lastValue;
+        //     array[array.length-1] = firstValue;
+
+        //     return array;
+
+        // }
+        // const numbers = [1,2,3,4,5];
+        // console.log(arraySwap(numbers));
+
+        //Task 4
+        // for (let counter = 0;counter < 10; counter+=2){
+        //     console.log(counter);
+        // }
+
+        //Task 5 and 6
+        // let counter = 5;
+
+        // while (counter>=0){
+        //     console.log(counter);
+        //     counter--;
+        // }
+
+        //Task 7 and 8
+        // const numbers = [-2, -1, 0, 99];
+        // const numsAdded = [];
+
+        // for (let counter = 0; counter < numbers.length; counter++) {//1//2//3
+        //     numsAdded.push(numbers[counter] + 1);//2//3//4
+        // }
+        // for (let counter = 0; counter < numsAdded.length; counter++) {
+        //     console.log(numsAdded[counter]);
+        // }
+
+        //Task 9
+        // const numbers = [-2, -1, 0, 99];
+
+        //arrow function
+        // const addOne = (array) => {
+        //     const numsAdded = [];
+
+        //     for (let counter = 0; counter < array.length; counter++) {
+        //         numsAdded.push(array[counter] + 1);
+        //     }
+        //     return numsAdded;
+        // }
+        // const newArray = addOne(numbers);
+
+        // newArray.forEach(element => {
+        //     console.log(element);
+        // });
+
+        //Task 10
+        // const numbers = [1, 2, 3];
+        // const numsAdded = [];
+
+        // const addNum = (array, num) => {
+        //     const numsAdded = [];
+        //     for (let counter = 0; counter < array.length; counter++) {
+        //         numsAdded.push(array[counter] + num);
+        //     }
+        //     return numsAdded;
+        // }
+
+        // const newArray = addNum(numbers,6);
+
+        // newArray.forEach(element =>{
+        //     console.log(element);
+        // });
+
+        //Task 11
+        // const addArrays = (array1, array2) => {
+        //     const addedArray = [];
+
+        //     for (let counter = 0; counter < array1.length; counter++) {
+        //         addedArray.push(array1[counter] + array2[counter]);
+        //     }
+        //     return addedArray;
+        // }
+
+        // const displayArrays1 = addArrays([1, 1, 2], [1, 1, 3]);
+        // displayArrays1.forEach(element => {
+        //     console.log(element);
+        // });
+        // console.log("\n");
+        // const displayArrays2 = addArrays([1, 2, 3], [4, 5, 6]);
+        // displayArrays2.forEach(element => {
+        //     console.log(element);
+        // });
+
+        //Task 12
+        console.time();
+        const countPositive = (nums) => {
+            let count = 0;
+            return function () {
+                for (counter = 0; counter < nums.length; counter++) {
+                    if (nums[counter] > 0) {
+                        count++;
+                    }
+                }
+                return count;
+            }
+        }
+
+        const positiveNums = countPositive([-2, 3, -5, 7, 10]);
+        const positiveCount = positiveNums();
+
+        console.log(positiveCount);
+        console.timeEnd();
+    </script>
+</body>
+
+</html>

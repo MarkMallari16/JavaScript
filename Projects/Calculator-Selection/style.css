@@ -1,0 +1,17 @@
+*{
+    font-family: 'Poppins',sans-serif;
+}
+:root{
+    --bg: #1F1F1F;
+    --secondary: #343341;
+    --accent:#8685EF;
+    --txt-color: #FAF7FF;
+}
+.container{
+    background-color: var(--bg);
+    color: var(--txt-color);
+}
+.container #calculate{
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+}

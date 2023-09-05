@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+</head>
+
+<body>
+    <h1 id="text1"></h1>
+    <p>Delivery Time: <span id="txtDelTime1"></span></p>
+    <hr>
+    <h1 id="text2"></h1>
+    <p>Delivery Time: <span id="txtDelTime2"></span></p>
+    <hr>
+    <span id="result"></span>
+    <script>
+
+        const product1 = {
+            productName: "basketball",
+            price: 2095,
+            ['delivery-time']: "January 29, 2024",
+            displayProductInfo() {
+                document.getElementById("text1").innerHTML = `${this.productName} $${this.price} cents`;
+            },
+            increasePrice() {
+                return document.getElementById("text1").innerHTML = this.price += 500;
+            },
+            displayDeliveryTime() {
+                document.getElementById("txtDelTime1").innerHTML = product1['delivery-time'];
+            },
+
+        }
+        const product2 = {
+            productName: "basketball",
+            price: 900,
+            ['delivery-time']: "January 31, 2024",
+            displayProductInfo() {
+                document.getElementById("text2").innerHTML = `${this.productName} $${this.price} cents`;
+            },
+            increasePrice() {
+                return document.getElementById("text1").innerHTML = this.price += 500;
+            },
+            displayDeliveryTime() {
+                document.getElementById("txtDelTime2").innerHTML = product2['delivery-time'];
+            },
+
+        }
+     
+        console.log(repeatTxt);
+        product1.displayDeliveryTime();
+        product1.displayProductInfo();
+
+        product2.displayDeliveryTime();
+        product2.displayProductInfo();
+
+        const priceDifference = comparePrice(product1, product2);
+        console.log(isSameProduct(product1, product2));
+        document.getElementById("result").innerHTML = `The less Expensive is ${priceDifference}`;
+
+
+        function comparePrice(product1, product2) {
+            if (product1.price < product2.price) {
+                return product1.price;
+            } else {
+                return product2.price;
+            }
+        }
+        function isSameProduct(product1, product2) {
+            let result = (product1.productName === product2.productName && product1.price === product2.price) ? true : false;
+            return result;
+        }
+       
+
+        function convertTextToLowerCase(text){
+            return text.toLowerCase();
+        }
+    </script>
+</body>
+
+</html>

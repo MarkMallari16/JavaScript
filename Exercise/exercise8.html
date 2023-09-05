@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 8</title>
+</head>
+
+<body>
+    <input type="number" id="inputField" maxlength="11">
+
+    <button onclick="displayNumber()" onkeydown="pressEnter(event)">submit</button>
+    <h3 id="header"></h3>
+    <p id="text"></p>
+    <script>
+        const header = document.getElementById("header");
+        const text = document.getElementById("text");
+        const inputField = document.getElementById("inputField");
+        function displayNumber() {
+
+            let padText = inputField.value.toString();
+            padText = padText.padStart(11, "0");
+
+            text.innerHTML = padText;
+            header.innerHTML = "Your number is"
+        }
+        function pressEnter(event){
+            if (event.key === "Enter"){
+                displayNumber();
+            }
+        }
+
+    </script>
+</body>
+
+</html>

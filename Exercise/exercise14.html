@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 14</title>
+</head>
+
+<body>
+
+    <script>
+        //declare array of numbers which have 
+        const numbers = [600, 200, 9, 100, 28, 23, 6, 1, 5, 18, 16];
+
+        //this function will sort an array thru descending order and have 2 parameters which is  array and callback
+        function sortToDescending(array, callback) {
+
+            //get the array size
+            const length = array.length;
+            for (let row = 0; row < length; row++) {
+                for (let col = 0; col < (length - row - 1); col++) {
+                    //this will compare the 2 elements of an array if first element is less than to second element
+                    if (array[col] < array[col + 1]) {//first condition failed
+
+                        let temp = array[col];
+                        array[col] = array[col + 1];
+                        array[col + 1] = temp;
+                    }
+                }
+            }
+            //this will call the callback function
+            callback(array);
+        }
+        //this will display  the new array that display each index and element
+        function displaySortedArray(array) {
+            for (let counter = 0; counter < array.length; counter++) {
+                console.log(`${counter + 1} - ${array[counter]}`);
+            }
+        }
+        //call the function sortToDescending and pass arguments numbers and displaySortedArray function
+        sortToDescending(numbers, displaySortedArray);
+
+        //result
+        //row = 0  //element 1 = 100
+                    //col = 3  //element 2 = 9
+                    //array length = 3 //temp = 9
+                    // new array value is [600,200,100,9]
+    </script>
+</body>
+
+</html>

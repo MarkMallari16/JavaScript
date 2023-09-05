@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="temperature-three-quarters-solid.svg">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Temperature <span>Converter</span></h1>
+
+        </div>
+        <span id="sub-header">created by Mark Mallari</span>
+        <div class="input-container">
+            <div class="deg-container">
+                <label for="degrees">Degree</label>
+                <input type="text" name="degrees" class="temp" id="celcius" oninput="celToFar()">
+                <div class="type-container">
+                    <label for="type">Type</label>
+                    <select name="type" id="type1">
+                        <option value="fahrenheit" selected>Fahrenheit</option>
+                        <option value="celcius">Celcius</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="repeat-icon">
+                <i class="fa-solid fa-repeat" id="swapType"></i>
+            </div>
+            <div class="deg-container">
+                <label for="degrees">Degree</label>
+                <input type="text" name="degrees" class="temp" id="fahrenheit" oninput="farToCel()">
+                <div class="type-container">
+                    <label for="type">Type</label>
+                    <select name="type" id="type2" class="temp">
+                        <option value="celcius" selected>Celcius</option>
+                        <option value="fahrenheit">Fahrenheit</option>
+
+                    </select>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/cb37e64477.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<!-- <div class="btn">
+            <button onclick="convertTemperature()">Convert</button>
+        </div> -->
+<!-- <div class="result">
+            Result<span id="result"></span>
+        </div> -->

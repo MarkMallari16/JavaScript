@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+    }
+
+    :root {
+        --bg: #BEADFA;
+        --button-1-accent: #FFF3DA;
+        --button-2-accent: #DFCCFB
+    }
+
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .child {
+
+
+        padding: 20px;
+        width: 100%;
+        max-width: 500px;
+        height: 500px;
+        background-color: #BEADFA;
+        border-radius: 6px;
+    }
+
+    .child h1 {
+        text-align: center;
+    }
+
+    .child label {
+        display: block;
+    }
+
+    .child #textField {
+        border: 1px solid #000;
+        border-radius: 6px;
+        width: 100%;
+        padding: 12px;
+    }
+
+    .child .btn-container {
+        margin-top: 8px;
+    }
+
+    .child .btn-container button {
+        background-color: var(--button-1-accent);
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #000;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+
+    .child .btn-container button:hover {
+        opacity: 0.8;
+    }
+
+    .child .text-length-container {
+        display: flex;
+        justify-content: end;
+        margin-top: 6px;
+        margin-right: 4px;
+    }
+
+    .child .text-container {
+        text-align: center;
+        margin-top: 18px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="child">
+            <h1>Palindrome Word</h1>
+            <div class="label-container">
+                <label for="textField">Enter word</label>
+            </div>
+            <input type="text" id="textField" placeholder="*civic" maxlength="30">
+            <div class="text-length-container">
+                <p><span id="textLength">0</span>/30</p>
+            </div>
+            <div class="btn-container">
+                <button id="btn1">Submit</button>
+            </div>
+            <div class="text-container">
+                <span id="textResult"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        const btn1 = document.getElementById("btn1").addEventListener("click", checkPalindrome)
+        document.getElementById("textField").addEventListener("keydown", pressEnter);
+
+
+        function checkPalindrome() {
+            //input
+            const inputField = document.getElementById("textField");
+            let inputValue = inputField.value;
+            //span
+            const textResult = document.getElementById("textResult");
+
+            //longer method
+            // const arrayValues = inputValue.split('');
+            // const reverseArrayValues = arrayValues.reverse();
+            // const reverseString = reverseArrayValues.join('');
+
+            const validInput = inputValue.replace(/[^a-z]/g, '');
+
+            //short method
+            if (validInput === inputValue.split('').reverse().join('').trim()) {
+                textResult.innerHTML = `${inputValue} is a palindrome!`;
+            } else {
+                textResult.innerHTML = `${inputValue} is not a palindrome!`;
+            }
+        }
+        function pressEnter(event) {
+
+            if (event.key === "Enter") {
+                checkPalindrome();
+            }
+        }
+        function countText() {
+            const inputField = document.getElementById("textField");
+            const textLengthSpan = document.getElementById("textLength");
+
+
+            const inputValue = inputField.value;
+            const wordCount = inputValue.match(/\S+/g)?.length || 0;
+            textLengthSpan.textContent = wordCount;
+        }
+        document.getElementById("textField").addEventListener("input", countText);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 13</title>
+</head>
+<style>
+    #textResult {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    button {
+        padding: 10px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    #add {
+        background-color: lightgreen;
+    }
+
+    #remove {
+        background-color: lightcoral;
+    }
+</style>
+
+<body>
+    <button id="add">add</button>
+    <button id="remove">remove</button>
+    <!-- <button id="btn">Start</button> -->
+    <!-- <button id="btn">Add to cart</button>
+    <p id="textResult"></p> -->
+    <script>
+        // //Exercise 
+
+        // function compareType(type1,type2){
+        //     if (type1 !== type2){
+        //         return "Not Equal";
+        //     }
+        //     return "Equal";
+        // }
+
+        // console.log(compareType("12",12));
+
+        //Exercise 1 and 2
+        // function add() {
+        //     console.log(2 + 3);
+        // }
+
+        // add();
+        // add();
+
+        // function add() {
+        //     console.log(2 + 3);
+        // }
+
+        // function runTwice(fun) {
+        //     fun();
+        //     fun();
+        // }
+        // runTwice(add);
+
+        //Exercise 3
+        // const myBtn = document.getElementById("btn");
+        // myBtn.addEventListener("click", () => {
+        //     setTimeout(() => {
+        //         myBtn.innerHTML = "Finished!";
+        //     }, 1000)
+        // });
+        //Exercise 4
+        // const myBtn = document.getElementById("btn");
+        // myBtn.addEventListener("click", () => {
+        //     myBtn.innerHTML = "Loading...";
+        //     setTimeout(() => {
+        //         myBtn.innerHTML = "Finished!";
+        //     }, 1000)
+
+        // });
+
+        //Exercise 5
+
+        // const myBtn = document.getElementById("btn");
+        // const text = document.getElementById("textResult");
+
+        // myBtn.addEventListener("click", () => {
+        //     text.innerHTML = "Added";
+        //     setTimeout(() => {
+        //         text.innerHTML = "";
+        //     }, 2000)
+        // });
+
+        //Exercise 6
+        // const myBtn = document.getElementById("btn");
+        // const text = document.getElementById("textResult");
+        // let timeOutID;
+
+        // myBtn.addEventListener("click", () => {
+        //     text.innerHTML = "Added";
+        //     clearTimeout(timeOutID);
+
+
+        //     timeOutID = setTimeout(() => {
+        //         text.style.opacity = "0";
+        //         setTimeout(() => {
+        //             text.style.opacity = "1";
+        //             text.innerHTML = "";
+        //         }, 500)
+        //     }, 2000);
+        // });
+
+        //Exercise 7
+        // let origTitle = document.title;
+        // setInterval(() => {
+
+        //     if (document.title === origTitle) {
+        //         document.title = "(2) New Messages";
+        //     } else {
+        //         document.title = origTitle;
+        //     }
+        // }, 1000);
+
+        //Exercise 8
+        const addBtn = document.getElementById("add");
+        const removeBtn = document.getElementById("remove");
+        let count = 1;
+        let origTitle = document.title;
+
+        //function
+        addBtn.addEventListener("click", () => {
+            count++;
+        });
+        removeBtn.addEventListener("click", () => {
+            count--;
+        });
+
+        const intervalID = setInterval(() => {
+            if (count > 5) {
+                clearInterval(intervalID);
+                document.title = origTitle;
+            } else {
+                if (document.title === origTitle) {
+                    document.title = `(${count}) New Messages!`;
+                } else {
+                    document.title = origTitle;
+                }
+            }
+        }, 1000);
+
+    </script>
+</body>
+
+</html>

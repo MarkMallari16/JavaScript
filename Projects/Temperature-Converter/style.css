@@ -1,0 +1,108 @@
+:root {
+    --white: #f1f1f1;
+    --gray: #D3D3D3;
+    --bg: #1f1f1f;
+    --accent: #8685EF;
+    --hover-color: #6056b9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 350px;
+    max-width: 550px;
+    background-color: var(--white);
+    border-radius: 6px;
+}
+
+.container .header h1 {
+    text-align: center;
+}   
+
+#sub-header{
+    text-align: center;
+    margin-bottom: 6px;
+}
+.container .input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.container .input-container select{
+    width: 100%;
+}
+
+.container .input-container input[type="text"],
+select {
+    border: 1px solid #1f1f1f;
+    display: block;
+    padding: 12px 28px;
+    border-radius: 6px;
+}
+
+.container .input-container input[type="text"]:focus,
+select:focus {
+    border-color: var(--accent);
+}
+
+.container .input-container .repeat-icon {
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.container .input-container .repeat-icon:hover {
+    color: var(--hover-color);
+}
+
+.btn {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn button {
+    padding: 12px 38px;
+    cursor: pointer;
+    color: var(--white);
+    border-radius: 4px;
+    background-color: var(--accent);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn button:hover {
+    background-color: var(--hover-color);
+}
+
+.result {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+}
+
+.result span {
+    font-size: 2.3rem;
+    font-weight: 600;
+}

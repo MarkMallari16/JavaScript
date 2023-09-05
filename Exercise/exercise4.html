@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+    }
+
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .container .child h1 {
+        text-align: center;
+    }
+
+    .container .child {
+        height: 500px;
+        padding: 26px;
+        background: rgba(74, 144, 226, 0.45);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(3.5px);
+        -webkit-backdrop-filter: blur(3.5px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+    }
+
+    button:hover {
+        opacity: 0.9;
+    }
+
+    .container .child .txt2 {
+        margin-bottom: 20px;
+    }
+
+    .container .child input,
+    .container .child button {
+        display: block;
+        width: 100%;
+        border-radius: 4px;
+        border: none;
+    }
+
+    input {
+        padding: 12px 24px;
+        margin-bottom: 8px;
+    }
+
+    #btn1 {
+        background-color: #000;
+    }
+
+    #btn1,
+    #btn2 {
+        color: #ffff;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 10px 24px;
+
+    }
+
+    #btn1 {
+        margin-bottom: 6px;
+    }
+
+    #btn2 {
+        background-color: #5B63B7;
+    }
+
+    .result-container {
+        margin-top: 20px;
+        text-align: center;
+    }
+   
+    .error {
+        color: red;
+      
+    }
+    
+</style>
+
+<body>
+    <div class="container">
+        <div class="child">
+            <h1>Shopee Calculating Products</h1>
+            <p class="txt1">Orders under $50 = +$10 shipping thru JNT Courier</p>
+            <p class="txt2">Orders over $50 = FREE SHIPPING</p>
+            <input type="text" name="inputField" id="inputField1" placeholder="Product Name">
+            
+            <input type="error error-txt text" name="inputField" id="inputField2" placeholder="Cost of order">
+            <span class="error error-txt error-txt2"></span>
+            <button id="btn1">Calculate</button>
+            <button onclick="clearAll()" id="btn2">Clear</button>
+            <div class="result-container">
+                <span class="error" id="result"></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function calculateCost() {
+            const inputField1 = document.getElementsByName("inputField")[0].value;
+            const inputField2 = document.getElementsByName("inputField")[1];
+            const textResult = document.getElementById("result");
+
+            const productCost = Number(inputField2.value);
+            const shipping = 10;
+
+            //error txt 
+            const errorTxt = document.querySelectorAll('.error-txt');
+            const errorTxt1 = document.querySelector('.error-txt1');
+            const errorTxt2 = document.querySelector('.error-txt2');
+
+            if (inputField1 === "" || productCost === "") {
+                errorTxt2.classList.add('error');
+                errorTxt2.innerHTML = "You must enter a name of your product and enter the cost!";
+            } else if (inputField1 === "") {
+                errorTxt2.classList.add('error');
+                errorTxt2.innerHTML = "You must enter a name of your product!";
+            } else if (isNaN(productCost) || productCost === "") {
+                errorTxt2.classList.add('error');
+                errorTxt2.innerHTML = "You must enter a number!";
+            } else {
+                errorTxt2.classList.remove('error');
+                errorTxt2.innerHTML = ""; // Clear any previous error messages
+
+                let totalCost = 0;
+                if (productCost >= 50) {
+                    totalCost = productCost;
+                    textResult.classList.remove('error');
+                    errorTxt.classList.remove('error');
+                    textResult.innerHTML = `Total cost of your order named ${inputField1} is $${productCost.toFixed(2)} and it is free shipping!`;
+                } else if (productCost > 0 && productCost < 50) {
+                    totalCost = productCost + shipping;
+                    textResult.classList.remove('error');
+                    errorTxt.classList.remove('error');
+                    textResult.innerHTML = `Total cost of your order named ${inputField1} is $${totalCost.toFixed(2)}`;
+                } else {
+                    textResult.classList.add('error');
+                    textResult.innerHTML = "Error: cost cannot be less than $0";
+                }
+            }
+        }
+
+        function calculateCost() {
+            const inputField1 = document.getElementsByName("inputField")[0].value;
+            const inputField2 = document.getElementsByName("inputField")[1];
+            const textResult = document.getElementById("result");
+
+            const productCost = Number(inputField2.value);
+            const shipping = 10;
+
+            //error txt 
+            const errorTxt = document.querySelector('.error-txt');
+            const errorTxt1 = document.querySelector('.error-txt1');
+            const errorTxt2 = document.querySelector('.error-txt2');
+
+            if (inputField1 === "" || productCost === "") {
+                errorTxt.classList.add('error');
+                errorTxt.innerHTML = "You must enter a Name of your product and enter the cost!";
+            } else if (inputField1 === "") {
+                errorTxt2.classList.add('error');
+                errorTxt2.innerHTML = "You must enter a name of your product!";
+            } else if (isNaN(productCost) || productCost === "") {
+                errorTxt2.classList.add('error');
+                errorTxt2.innerHTML = "You must enter a number!";
+            } else {
+                let totalCost = 0;
+                if (productCost >= 50) {
+                    totalCost = productCost;
+
+                    errorTxt2.innerHTML = "";
+                    textResult.classList.remove('error');
+                    textResult.innerHTML = `Total cost of your order named ${inputField1} is $${productCost.toFixed(2)} and it is free shipping!`;
+                } else if (productCost > 0 && productCost < 50) {
+                    totalCost = productCost + shipping;
+
+                    errorTxt2.innerHTML = "";
+                    textResult.classList.remove('error');
+                    textResult.innerHTML = `Total cost of your order named ${inputField1} is $${totalCost.toFixed(2)}`;
+                } else {
+                    textResult.classList.add('error');
+
+                    textResult.innerHTML = "Error: cost cannot be less than $0";
+                }
+            }
+        }
+
+        //for onclick
+        const btnElement1 = document.getElementById("btn1");
+        btnElement1.addEventListener("click", calculateCost);
+        //onkeydown
+        const inputField1 = document.getElementById("inputField1");
+        inputField1.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                calculateCost();
+            }
+        })
+        const inputField2 = document.getElementById("inputField2");
+        inputField2.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                calculateCost();
+            }
+        });
+
+
+        function clearAll() {
+            const inputField1 = document.getElementsByName("inputField")[0];
+            const inputField2 = document.getElementsByName("inputField")[1];
+            const textResult = document.getElementById("result");
+            //error txt
+            
+           
+            const errorTxt2 = document.querySelector('.error-txt2');
+          
+            errorTxt2.innerHTML = "";
+
+            inputField1.value = "";
+            inputField2.value = "";
+            textResult.innerHTML = "";
+        }
+
+    </script>
+</body>
+
+</html>

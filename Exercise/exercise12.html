@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Exercise 1
+        // const fruits = ['Apple', 'Banana', 'Grapes', 'Avocadoes'];
+        // let searchFruits = "b";
+        // let isFound = false;
+        // let index;
+
+        // checkFruit(searchFruits, fruits, displayResult);
+
+        // function checkFruit(searchFruit, array, callback) {
+        //     let index = -1;
+        //     for (let counter = 0; counter < array.length; counter++) {
+
+        //         if (searchFruits.toLowerCase() === array[counter].toLowerCase()) {
+        //             index = counter;
+        //             isFound = true;
+        //             break;
+        //         }
+        //     }
+        //     callback(index);
+        // }
+
+        // function displayResult(index) {
+        //     if (isFound) {
+        //         console.log(`${searchFruits} exists at index ${index}`);
+        //     } else {
+        //         console.log(`Failed to search the index ${index}`);
+        //     }
+        // }
+
+        //Exercise 2
+        // function findIndexArray(array, word, callback) {
+        //     let isExist = false;
+        //     let index = -1;
+        //     for (let counter = 0; counter < array.length; counter++) {
+        //         if (array[counter] === word.toLowerCase()) {
+        //             index = counter;
+        //             isExist = true;
+        //             break;
+        //         }
+        //     }
+        //     callback(isExist, index);
+        // }
+
+        // function displayResult(isExist, index) {
+        //     if (isExist) {
+        //         console.log(`found at index ${index}`);
+        //     } else {
+        //         console.log(`failed to find the index ${index}`);
+        //     }
+        // }
+
+        // const colors = ["red", "blue", "red", "violet"];
+        // const color = "red";
+
+        // findIndexArray(colors, color, displayResult);
+
+        //Exercise 3
+
+        // function removeEgg(foods, food) {
+        //     const reversedFoods = foods.slice().reverse();
+        //     const newFood = [];
+        //     let eggsRemove = 0;
+        //     for (let counter = 0; counter < reversedFoods.length; counter++) {
+        //         if (foods[counter].toLowerCase() === food.toLowerCase() && eggsRemove < 2) {
+        //             eggsRemove++;
+        //             continue;
+        //         } else {
+        //             newFood.push(foods[counter]);
+        //         }
+        //     }
+        //     return newFood.reverse();
+        // }
+
+        // const foods = ["egg", "apple", "egg", "egg", "ham"];
+        // const food = "egg";
+
+        // console.log(`My ingredients: ${removeEgg(foods, food)}`);
+        // console.log(foods.slice());
+
+        //Exercise 4
+        //Fizz Buzz
+
+        // function displayFizzBuzz(num) {
+        //     for (let counter = 1; counter <= num; counter++) {
+        //         if (counter % 3 == 0 && counter % 5 == 0) {
+        //             console.log("FizzBuzz");
+        //         } else if (counter % 3 == 0) {
+        //             console.log("Fizz");
+        //         } else if (counter % 5 == 0) {
+        //             console.log("Buzz");
+        //         } else {
+        //             console.log(counter);
+        //         }
+        //     }
+        // }
+
+        // let num = 20;
+
+        // displayFizzBuzz(num);
+
+        //Exercise 5
+
+        // function displayUniqueResult(array, array2) {
+        //     const uniqueArray = [...new Set(array), ... new Set(array2)];
+        //     uniqueArray.forEach(element => {
+        //         console.log(element);
+        //     })
+        // }
+
+        // const colors = ["red", "red", "red", "violet"];
+        // const animals = ["dog", "cat", "dog", "cat"];
+        // displayUniqueResult(colors, animals);
+
+    </script>
+</body>
+
+</html>

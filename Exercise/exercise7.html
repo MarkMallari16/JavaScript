@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+    }
+
+    :root {
+        --txtcolor1: #ffff;
+        --txtcolor2: #000;
+        --bg1: #000;
+        --bg2: #d7d7d7;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        gap: 20px;
+
+    }
+
+    button {
+        padding: 12px 26px;
+        cursor: pointer;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+
+    #btn1 {
+        color: var(--txtcolor1);
+        background-color: var(--bg1);
+        margin-right: 6px;
+
+    }
+
+    #btn1:hover {
+        opacity: 0.7;
+    }
+
+    #btn2 {
+        color: var(--txtcolor2);
+        background-color: var(--bg2);
+
+    }
+
+    #btn2:hover {
+        opacity: 0.7;
+    }
+
+    .child2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .text-container {
+        text-align: center;
+        margin-bottom: 6px;
+    }
+
+    .isClicked {
+        color: var(--bg2);
+        background-color: var(--bg1);
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="child1">
+            <button id="btn1">Request now</button>
+            <button id="btn2">Schedule for later</button>
+        </div>
+        <div class="child2">
+            <div class="text-container">
+                <p>What is your Favorite Hobbies?</p>
+            </div>
+            <div class="parent-btn">
+                <button id="childBtn1" class="btn">Gaming</button>
+                <button id="childBtn2" class="btn">Music</button>
+                <button id="childBtn3" class="btn">Coding</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const buttons = document.querySelectorAll('.btn');
+
+
+        buttons.forEach(button => {
+            button.addEventListener("click", function () {
+
+                // if (!(button.classList.contains('isClicked'))) {
+                //     button.classList.add('isClicked');
+                // }else{
+                //     button.classList.remove('isClicked');
+                // }
+                buttons.forEach( otherBtn =>{
+                    if (otherBtn !== button){
+                        otherBtn.classList.remove('isClicked');
+                    }
+                });
+                button.classList.toggle('isClicked');
+            });
+        });
+        // buttons.forEach(button => {
+        //     button.addEventListener("click", function () {
+        //         if (!button.classList.contains('isClicked')) {
+        //             button.classList.add('isClicked'); // Add the 'isClicked' class if not already present
+        //         }
+        //     });
+        // });
+
+    </script>
+</body>
+
+</html>

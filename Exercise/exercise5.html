@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5</title>
+</head>
+<style>
+    * {
+        font-family: 'poppins', sans-serif;
+    }
+    :root{
+        --bg: #BEADFA;
+        --button-1-accent: #FFF3DA;
+        --button-2-accent: #DFCCFB
+    }
+    body{
+        background-color: var(--bg);
+    }
+    .container {
+        height: 90vh;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        text-align: center;
+    }
+    button {
+        padding: 12px 20em;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+    }
+    #btn1,#btn2{
+        border: 2px solid #000;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+    #btn1:hover,#btn2:hover{
+        opacity: 0.8;
+
+    }
+    #btn1{
+        background-color: var(--button-1-accent);
+        margin-bottom: 6px;
+    }
+    #btn2{
+        background-color: var(--button-2-accent);
+    }
+    p{
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="child">
+            <h1>Head and Tail</h1>
+            <button id="btn1" class="head">head</button>
+            <button id="btn2" class="tail">tail</button>
+            <p></p>
+        </div>
+    </div>
+    <script>
+        let btn1 = document.querySelector(".head");
+        let btn2 = document.querySelector(".tail");
+        let paragraph = document.querySelector("p");
+        btn1.addEventListener("click", function () {
+            paragraph.innerHTML = "You chose Head";
+        });
+        btn2.addEventListener("click", function () {
+            paragraph.innerHTML = "You chose Tails";
+        });
+
+    </script>
+</body>
+
+</html>

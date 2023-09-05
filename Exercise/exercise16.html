@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function countdown(n) {
+            if (n < 1) {
+                return [];
+            } else {
+                const countArray = countdown(n - 1);//0
+
+                countArray.unshift(n);//5,4,3,2,1
+
+                return countArray;
+            }
+        }
+        function rangeOfNumbers(startNum, endNum) {
+            if (startNum > endNum) {
+                return [];
+            } else {                             //1     /4
+                const arrayNum = rangeOfNumbers(startNum, endNum - 1);
+                arrayNum.push(endNum);//5
+                
+                return arrayNum;
+            }
+        };
+        console.log(rangeOfNumbers(1, 5));
+        // console.log(countdown(5));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+</head>
+
+<body>
+    <p id="text"></p>
+    <script>
+        let text = document.getElementById("text")
+        let name = window.prompt("What is your name?");
+        let userHours = window.prompt("What time is it in your country?");
+
+
+        let hoursResult = userHours >= 6 && userHours <= 12 ?  text.innerHTML = `Good Morning ${name}`: text.innerHTML = `Good Evening ${name}!`;
+
+    </script>
+</body>
+
+</html>

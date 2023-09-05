@@ -1,0 +1,36 @@
+:root {
+    --background: #FAF8FF;
+    --accent: #8685EF;
+}
+
+
+* {
+    font-family: 'Monsterrat', sans-serif;
+}
+
+body {
+    background-color: var(--background) !important;
+}
+.scoreTxt{
+    color: var(--background);
+}
+.emoji {
+    font-size: 18rem;
+    padding: 50px;
+   
+}
+
+.emoji1,.emoji2{
+    
+    background-color: var(--accent);
+}
+
+.headerTxt{
+    font-size: 2rem;
+}
+.vsTxt {
+    text-align: center;
+    font-size: clamp(16rem, 23.5rem + -24vw, 10rem);
+}
+
+
