@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+
+<body>
+    <!-- <p>Sum:</p>
+    <p id="resultTxt"></p> -->
+    <script>
+        //Spread Operator
+        // const numbers1 = [1,2,3,4,5];
+        // const numbers2 = [6,7,8,9,10];
+
+        // const combinedNumbers = [...numbers1,...numbers2];
+        // console.log(combinedNumbers);
+
+
+        //destructuring
+        const students = {
+            name: "Mark",
+            age: 16,
+            grade: 10,
+            section: "Guyabano"
+        };
+
+        const { name, age, grade, ...student } = students;
+
+        console.log(grade);
+
+        //Rest Operator
+        // let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // document.getElementById("resultTxt").innerHTML = add(...numbers);
+        // function add(...numbers) {
+        //     let sum = 0;
+
+        //     for (let counter of numbers) {
+        //         sum += counter;
+        //     }
+        //     return sum;
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Regular Expression Tutorial</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background-color: #000;
+    }
+
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        height: auto;
+        width: 100%;
+        max-width: 500px;
+        background-color: #fff;
+        border-radius: 6px;
+    }
+
+    input {
+        outline: none !important;
+        padding: 12px 24px;
+    }
+
+    button {
+        margin-top: 12px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        padding: 12px 24px;
+        cursor: pointer;
+    }
+
+    .error-container {
+        display: none;
+    }
+
+    .valid {
+        display: block;
+        color: green;
+    }
+
+    .invalid {
+        display: block;
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <label for="userName">User Name: </label>
+            <input type="text" id="userName">
+            <div class="error-container "></div>
+            <button type="submit" id="btn">Log in</button>
+        </div>
+    </div>
+    <script>
+
+
+        const validateBtn = document.getElementById("btn");
+        validateBtn.addEventListener("keyup", () => {
+            const userNameElement = document.getElementById("userName");
+            const userNameValue = userNameElement.value;
+            const errorElement = document.querySelector('.error-container');
+            const userNameRegx = /^[a-z\d]{5,12}$/i;
+
+            if (userNameRegx.test(userNameValue)) {
+
+                errorElement.classList.add("valid");
+                errorElement.classList.remove("invalid");
+                errorElement.textContent = "Valid Username";
+            } else {
+                errorElement.classList.add("invalid");
+                errorElement.classList.remove("valid");
+                errorElement.textContent = "Invalid Username Must be Atleast 5 - 12 Characters";
+            }
+        });
+
+    </script>
+</body>
+
+</html>

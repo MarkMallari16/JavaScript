@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classlist</title>
+</head>
+<style>
+    * {
+        font-family: 'poppins', sans-serif;
+    }
+
+    :root {
+        --bg: #BEADFA;
+        --button-1-accent: #FFF3DA;
+        --button-2-accent: #DFCCFB
+    }
+    p{
+        padding: 20px;
+    }
+    button{
+        padding: 10px 24px;
+        cursor: pointer;
+    }
+    #addElement{
+        background-color: var(--button-2-accent);
+        border: 2px solid #000;
+        border-radius: 6px;
+    }
+    #removeElement{
+        background-color: var(--button-1-accent);
+        border: 2px solid #000;
+        border-radius: 6px;
+    }
+    .isClicked {
+
+        background-color: var(--bg);
+    }
+</style>
+
+<body>
+    <button id="addElement">Add</button>
+    <button id="removeElement">Remove</button>
+    <p id="paragraphElement">Hi, My name is Mark Christian Mallari</p>
+    <script>
+        const addBtn = document.getElementById("addElement").addEventListener("click", addStyle);
+        const removeBtn = document.getElementById("removeElement").addEventListener("click", removeStyle);
+        const paragraphElement = document.getElementById("paragraphElement").classList;
+
+
+        function addStyle() {
+            paragraphElement.add("isClicked");
+        }
+        function removeStyle() {
+            paragraphElement.remove("isClicked");
+        }
+    </script>
+</body>
+
+</html>

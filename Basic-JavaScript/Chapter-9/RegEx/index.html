@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 id="headerElement">Let's Get Connected!</h1>
+            <p id="subHeaderElement">Ready to dive in? Creating your user account is quick, easy, and the first step to
+                exploring a whole new dimension with us. Join the fun!</p>
+        </div>
+        <form>
+            <div class="form-header">
+                <h1 id="formHeaderElement">Sign In</h1>
+
+            </div>
+            <div class="inputField user-field">
+                <label for="usernameField">Username:</label>
+                <input type="text" name="username" id="usernameField" placeholder="e.g. pogiako1234" autocomplete="off">
+            </div>
+            <div class="invalid-message username-error">Username must be alphanumeric and contain 6-12 characters.</div>
+            <div class="inputField email-field">
+                <label for="emailField">Email:</label>
+                <input type="text" name="email" id="emailField" placeholder="e.g. pogiako1234@gmail.com"
+                    autocomplete="off">
+            </div>
+            <div class="invalid-message email-error">Email must be valid address e.g. john@gmail.com</div>
+            <div class="inputField password-field">
+                <label for="passwordField">Password:</label>
+                <input type="password" name="password" id="passwordField" placeholder="e.g. 2323" autocomplete="off">
+            </div>
+            <div class="invalid-message password-error">Password must have one uppercase letter,special characters and
+                numbers e.g. Pog!@ko </div>
+            <div class="inputField telephone-field">
+                <label for="telephoneField">Telephone:</label>
+                <input type="text" name="number" id="telephoneField" placeholder="e.g. 09109015012" autocomplete="off">
+            </div>
+            <div class="invalid-message number-error">Invalid Telephone number must be a number e.g. 09105264925
+            </div>
+            <div class="inputField button-field">
+
+                <button type="submit" disabled>Create Account</button>
+            </div>
+            <div class="already-field">
+                <span>Already Have an Account? <a href="">log in</a></span>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

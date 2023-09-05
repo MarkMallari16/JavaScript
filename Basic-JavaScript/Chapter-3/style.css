@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color: #F7F7F7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    float: left;
+    background-color: aquamarine;
+    color: #1f1f1f;
+    width: 150px;
+    height: 150px;
+    line-height: 140px;
+    text-align: center;
+    margin: 10px;
+    display: none;
+}
+.show{
+    display: block;
+}
+.btn{
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    background: none;
+}
+.btn:hover{
+   color: brown;
+}
+.active{
+    color: brown;
+}

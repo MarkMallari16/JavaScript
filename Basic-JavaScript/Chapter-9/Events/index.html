@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputField1" placeholder="Enter your text here">
+    <script>
+        const inputField1 = document.getElementById("inputField1");
+        inputField1.addEventListener("keydown", pressKeyDown);
+        inputField1.addEventListener("keyup", pressedKeyUp);
+        inputField1.addEventListener("keypress", displayKeyPressed);
+
+        //	A user presses a key
+        function pressKeyDown(event){
+            console.log(event.key);
+        }
+         //	A user presses a key
+        function pressedKeyUp(event){
+            console.log(event.key);
+        }
+        //  Not Recommended
+        // function displayKeyPressed(event){
+        //     console.log(event.key);
+        // }
+        
+    </script>
+</body>
+</html>

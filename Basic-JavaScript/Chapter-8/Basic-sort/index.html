@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ascending Order</h2>
+    <p id="text1"></p>
+    <h2>Descending Order</h2>
+    <p id="text2"></p>
+
+
+    <script>
+        const numbers = [1, 99, 23, 51, 4, 2, 5, 3];
+
+        const ascNumbers = [...numbers].sort(ascendingNumbers);
+        const descNumbers = [...numbers].sort(descendingNumbers);
+
+        ascNumbers.forEach(displayAscendingOrder);
+        descNumbers.forEach(displayDescendingOrder);
+
+        function ascendingNumbers(element1, element2) {
+           return element1 - element2
+
+        }
+        function descendingNumbers(element1, element2) {
+            return element2 - element1;
+        }
+       
+        function displayAscendingOrder(element) {
+            let text1 = document.getElementById("text1").innerHTML += "Number: " + element + "<br>";
+           
+        }
+        function displayDescendingOrder(element) {
+            let text1 = document.getElementById("text2").innerHTML += "Number: " + element + "<br>";
+           
+        }
+
+    </script>
+</body>
+
+</html>

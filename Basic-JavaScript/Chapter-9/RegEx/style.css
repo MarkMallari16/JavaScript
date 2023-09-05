@@ -1,0 +1,122 @@
+:root {
+    --background: #B799FF;
+    --background-second: #fff;
+    --secondary-color: #ACBCFF;
+    --txt-color: #E6FFFD;
+    --accent: #AEE2FF;
+    --hover-color: #85BFF5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: var(--background);
+}
+
+.header {
+    width: 100%;
+    max-width: 550px;
+}
+
+#headerElement {
+    font-size: 3rem;
+}
+
+form {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    background-color: var(--background-second);
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    padding: 40px;
+}
+
+.form-invalid-height {
+    height: auto;
+}
+
+#formHeaderElement {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 8px;
+    outline: none !important;
+}
+
+input.valid {
+    border: 3px solid #36cc36;
+}
+
+input.invalid {
+    border: 3px solid #ff6b6b;
+    height: auto;
+}
+
+.invalid label {
+    display: block;
+}
+
+.invalid-message {
+    font-size: 14px;
+    color: #ff6b6b;
+    margin-top: 2px;
+    display: none;
+}
+
+.inputField,
+button {
+    width: 100%;
+}
+
+button {
+    margin-top: 18px;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 6px;
+    background-color: #ccc;
+}
+
+button.enabled-btn {
+    cursor: pointer;
+    background-color: var(--accent);
+    transition: all 0.3s ease;
+}
+
+button.disabled-btn {
+
+    cursor: not-allowed;
+    pointer-events: none;
+
+}
+
+button.enabled-btn:hover {
+    color: var(--txt-color);
+    background-color: var(--hover-color);
+}
+
+.already-field {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.already-field a {
+    color: #000;
+
+}

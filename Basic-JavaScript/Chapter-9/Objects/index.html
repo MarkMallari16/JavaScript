@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Objects</h1>
+    <script>
+        const firstName = "Mark";
+
+        const lastName = "Mallari";
+        const studentInfo = {
+            firstName: "Mark", lastName: "Mallari", ['firstName + lastName']: firstName + lastName, gradeLevel: 11, section: "Guyabano", ['room']: 101, previousGrade: {
+                math: 97,
+                science: 96,
+                programming: 96,
+                webDevelopment: 98,
+                english: 95,
+                sum: function myFuntion() {
+                    return (this.math + this.science + this.programming + this.webDevelopment + this.english) / 5;
+                }
+            },
+            greet: function greet() {
+                if (Math.floor(this.previousGrade.sum()) >= 96 && Math.floor(this.previousGrade.sum()) <= 100) {
+                    console.log("With Highest Honor Congratiolations!");
+                } else if (Math.floor(this.previousGrade.sum()) >= 93 && Math.floor(this.previousGrade.sum()) <= 95) {
+                    console.log("With High Honor Congratiolations!");
+                } else if (Math.floor(this.previousGrade.sum()) >= 90 && Math.floor(this.previousGrade.sum()) <= 94) {
+                    console.log("With Honor Congratiolations!");
+                } else if (Math.floor(this.previousGrade.sum()) >= 75 && Math.floor(this.previousGrade.sum()) <= 89) {
+                    console.log("Passed! Congratiolations!");
+                } else {
+                    console.log("Failed Better Luck Next Time!");
+                }
+            }
+        };
+        console.log(studentInfo.previousGrade.sum());
+        studentInfo.greet();
+
+        // //js to json
+        // const myJson = JSON.stringify(studentInfo);
+        // console.log(myJson);
+        // //json to js
+        // const myJs = JSON.parse(myJson);
+        // console.log(myJs);
+    </script>
+</body>
+
+</html>

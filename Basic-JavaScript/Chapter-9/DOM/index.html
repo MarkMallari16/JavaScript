@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    li {
+        padding: 12px;
+        border-radius: 12px;
+    }
+</style>
+
+<body>
+    <p>Fruits</p>
+    <ul>
+        <li>Orange</li>
+        <li>Apple</li>
+        <li>Grapes</li>
+        <li>Banana</li>
+        <li>Watermelon</li>
+    </ul>
+    <hr>
+    <h3>My Favorite Fruit</h3>
+    <span id="fruit"></span>
+    <script>
+        const fruit = document.getElementsByTagName("li");
+        const myFavoriteFruit = document.getElementById("fruit");
+        choice = 4;
+
+        if (choice === 0) {
+            fruit[0].style.backgroundColor = "Orange";
+        } else if (choice === 1) {
+            fruit[1].style.backgroundColor = "Red";
+
+        } else if (choice === 2) {
+            fruit[2].style.backgroundColor = "Violet";
+
+        } else if (choice === 3) {
+            fruit[3].style.backgroundColor = "Yellow";
+        } else if (choice === 4) {
+            fruit[4].style.backgroundColor = "pink";
+        }
+
+        myFavoriteFruit.innerHTML = fruit[0].innerHTML
+    </script>
+</body>
+
+</html>

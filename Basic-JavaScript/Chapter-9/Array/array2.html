@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 2</title>
+</head>
+<p id="text"></p>
+
+<body>
+    <script>
+        const nums = [5, 1, 10, 19];
+
+        //using anonymous function
+        // cars.forEach(function (element, index) {
+        //     console.log(`Element ${element} exists at index ${index}.`);
+        // });
+
+        //using arrow fucntion
+        // cars.forEach((element, index) => {
+        //     console.log(`Element ${element} exists at index ${index}.`);
+        // });
+
+        document.getElementById("text").innerHTML = nums.map(value => value * value).join();
+
+
+    </script>
+</body>
+
+</html>

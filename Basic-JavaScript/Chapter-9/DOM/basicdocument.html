@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="vegetables">
+        <li>Egg Plant</li>
+        <li>Lettuce</li>
+        <li>Potato</li>
+    </ul>
+    <ul id="fruits">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Grapes</li>
+    </ul>
+    <ul id="food">
+        <li>Adobo</li>
+        <li>Sinigang</li>
+        <li>Kaldereta</li>
+    </ul>
+    <script>
+        const element = document.querySelector("#vegetables");
+        const children = Array.from(element.children);
+        
+        children.forEach(child =>{
+            child.style.backgroundColor = 'lightgreen'
+        })
+    </script>
+</body>
+
+</html>
