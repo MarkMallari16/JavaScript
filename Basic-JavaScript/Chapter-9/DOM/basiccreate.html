@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element</title>
+</head>
+<ul id="fruits">
+    <li>Egg plant</li>
+    <li>Mango</li>
+    <li>Banana</li>
+</ul>
+
+<body>
+    <script>
+        const fruitsList = document.getElementById("fruits");
+        const fruit = document.createElement("li");
+        fruit.textContent = "Shabu"
+        //   fruitsList.append(fruit);
+        fruitsList.insertBefore(fruit,document.getElementsByTagName("li")[5]);
+    </script>
+</body>
+
+</html>

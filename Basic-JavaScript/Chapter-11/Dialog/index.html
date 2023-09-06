@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+    }
+
+    .container,
+    .modal-container {
+        padding: 20px;
+        line-height: 1.8;
+
+    }
+
+    .modal-container {
+        margin: auto;
+        width: 100%;
+        max-width: 600px;
+        border: none;
+        border-radius: 4px;
+
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .modal-container::backdrop {
+        backdrop-filter: blur(4px);
+        /* Adjust the blur amount as needed */
+        background-color: rgba(0, 0, 0, 0.3);
+        /* Adjust the background color and opacity as needed */
+    }
+
+    .container-button,
+    .dialog-button {
+        margin-top: 6px;
+    }
+
+    .btn {
+        padding: 10px 24px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        background-color: black;
+        color: #fff;
+    }
+
+    .btn:hover {
+        opacity: 0.8;
+    }
+
+    .dialog-button {
+        display: flex;
+        justify-content: end;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="blog-1">
+            <div class="header">
+                <h1>Simple Dialog</h1>
+            </div>
+            <div class="sub-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, mollitia!
+                Totam
+                hic asperiores a magni consequatur! Eius asperiores nesciunt a optio ea recusandae autem debitis ex
+                soluta,
+                dolorum quisquam enim expedita ad, maxime ullam repellat placeat. Earum accusamus facere dicta voluptas
+                veritatis minima quod ipsam corrupti. Necessitatibus, voluptas atque? Perferendis!</div>
+            <div class="container-button">
+                <button class="btn openModal" id="openBtn">Open Modal</button>
+            </div>
+        </div>
+
+
+    </div>
+    <dialog class="modal-container" id="modal">
+        <div class="dialog-header">
+            <h1>Dialog</h1>
+        </div>
+        <div class="dialog-sub-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, sit. Iure
+            expedita consequatur autem ad? Ea veritatis soluta suscipit quae, nisi praesentium iusto illo impedit
+            facere eum unde incidunt assumenda doloremque saepe exercitationem, voluptatem magnam sunt tempore
+            delectus! Sapiente ducimus nam, dolore reiciendis deleniti quos harum explicabo fugiat error laborum?
+        </div>
+        <div class="dialog-button">
+            <button class="btn closeModal" id="closeBtn">Close Modal</button>
+        </div>
+    </dialog>
+    <script>
+        const modal = document.getElementById("modal")
+        const openBtn = document.querySelector(".openModal");
+        const closeBtn = document.querySelector(".closeModal");
+
+        openBtn.addEventListener("click", () => {
+            modal.showModal();
+            modal.style.opacity = "1";
+            modal.style.visibility = "visible"
+
+        })
+        closeBtn.addEventListener("click", () => {
+
+            modal.style.opacity = "0";
+            modal.style.visibility = "hidden"
+            setTimeout(() => {
+                modal.close();
+            }, 100);
+        })
+    </script>
+</body>
+
+</html>
