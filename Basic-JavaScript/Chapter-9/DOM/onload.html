@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onload</title>
+</head>
+<style>
+    .shape {
+        height: 200px;
+        width: 200px;
+        background-color: lightcoral;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <!-- <button>Load</button>
+    <input type="text" name="text" id="text"> -->
+    <div class="shape">
+
+    </div>
+    <script>
+        //Events
+
+        // const element = document.querySelector("button");
+        // const element = document.body;
+        // const element = document.getElementById("text");
+        // const elementValue = element.value;
+        // element.addEventListener("click",() =>{
+        //     alert('hello world');
+        // });
+
+        //element.onload = doOnLoad;
+
+        // if (elementValue === null || elementValue.trim() === "") {
+        //     element.onchange = doSomeThing;
+        // }
+
+        // function doSomeThing() {
+        //     alert('You did something');
+        // }
+        const element = document.querySelector(".shape");
+        // element.onmouseover = changeColor;
+        // element.onmouseout = changeToDefaultBackground;
+        element.onmousedown = changeColor;
+        element.onmouseup = changeToDefaultBackground;
+        function changeColor() {
+            element.style.backgroundColor = "lime"
+        }
+        function changeToDefaultBackground(){
+            element.style.backgroundColor = "lightcoral";
+        }
+    </script>
+</body>
+
+</html>

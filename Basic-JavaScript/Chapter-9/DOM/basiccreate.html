@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Element</title>
 </head>
+<h3>Add Fruits</h3>
+<input type="text" name="inputField" id="inputField">
+<button type="submit" id="btn">create</button>
 <ul id="fruits">
     <li>Egg plant</li>
     <li>Mango</li>
@@ -14,11 +17,24 @@
 
 <body>
     <script>
+        const inputField = document.getElementById("inputField");
         const fruitsList = document.getElementById("fruits");
-        const fruit = document.createElement("li");
-        fruit.textContent = "Shabu"
-        //   fruitsList.append(fruit);
-        fruitsList.insertBefore(fruit,document.getElementsByTagName("li")[5]);
+
+        //btn
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", () => {
+            const fruit = document.createElement("li");
+            const inputValue =  inputField.value;
+            fruit.textContent = inputValue;
+            fruitsList.append(fruit);
+            inputField.value = "";
+        })
+
+
+
+        // fruit.textContent = "Shabu"
+        // //   fruitsList.append(fruit);
+
     </script>
 </body>
 

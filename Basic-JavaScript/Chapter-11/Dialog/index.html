@@ -26,17 +26,15 @@
         max-width: 600px;
         border: none;
         border-radius: 4px;
-
-        transition: opacity 0.3s ease, visibility 0.3s ease;
+        transition: opacity 0.3s ease, visibility 0.3s ease,transform 0.3s ease;
         opacity: 0;
         visibility: hidden;
+        transform: translateY(-50%);
     }
 
     .modal-container::backdrop {
         backdrop-filter: blur(4px);
-        /* Adjust the blur amount as needed */
         background-color: rgba(0, 0, 0, 0.3);
-        /* Adjust the background color and opacity as needed */
     }
 
     .container-button,
@@ -105,12 +103,13 @@
             modal.showModal();
             modal.style.opacity = "1";
             modal.style.visibility = "visible"
-
+            modal.style.transform = "translateY(0%)";
         })
         closeBtn.addEventListener("click", () => {
 
             modal.style.opacity = "0";
             modal.style.visibility = "hidden"
+            modal.style.transform = "translateY(-50%)";
             setTimeout(() => {
                 modal.close();
             }, 100);
