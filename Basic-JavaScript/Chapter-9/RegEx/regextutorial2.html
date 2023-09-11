@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Tutorial</title>
+</head>
+
+<input type="text" name="passwordField" id="passwordField">
+<button id="btnResult">Check</button>
+<p id="result"></p>
+
+<body>
+    <script>
+        const inputField = document.getElementById("passwordField");
+
+        const resultTxt = document.getElementById("result");
+        const btnResult = document.getElementById("btnResult");
+
+        btnResult.addEventListener("click", () => {
+            let result = validate(inputField.value);
+
+            resultTxt.innerHTML = result;
+        })
+
+
+
+        function validate(field) {
+            let pattern = /^(?=\w{6})(?=\w*\d{2})/;
+            if (field.match(pattern)) {
+                return `${field} is a valid password`;
+
+            } else {
+                return `${field} is not a valid password`;
+            }
+        }
+    </script>
+</body>
+
+</html>
