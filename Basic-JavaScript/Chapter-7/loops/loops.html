@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+
+<body>
+    <p id="result"></p>
+    <script>
+        //Legacy Loop
+        // const numbers = [1, 2, 3, 4, 5];
+        // const filteredNumbers = numbers.filter(number => number > 2);
+        // const sum = filteredNumbers.reduce((accumulator, current) => {
+        //     return accumulator + current;
+        // });
+        // document.write(sum);
+
+        //For In Loop
+        let text = "";
+        const txtResult = document.getElementById("result");
+        const person = {
+            name: "Mark",
+            age: 17,
+            ["Birth Place"]: "Manila"
+        };
+        for (let index in person) {
+            text += `${index} : ${person[index]} <br>`;
+        }
+        document.getElementById("result").innerHTML = text;
+
+    </script>
+</body>
+
+</html>

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         validateInput();
         placeInputField.value = "";
     });
-})
+});
 
 
 async function getWeatherData(placeWeatherValue) {
@@ -56,7 +56,7 @@ async function getWeatherData(placeWeatherValue) {
 
 
     } catch (error) {
-       alert('City Not Found Try Again.')
+        alert('City Not Found Try Again.')
     }
 };
 function validateInput() {
@@ -69,8 +69,10 @@ function validateInput() {
     }
 }
 // add event listener
-weatherBtn.addEventListener("keydown", (event) => {
+weatherBtn.addEventListener("keydown", event => {
     if (event.key === "Enter") {
-        weatherBtn.click();
+        event.preventDefault();
+        reload();
+        placeInputField.value = "";
     }
 });

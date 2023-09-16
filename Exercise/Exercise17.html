@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <script>
+        class Add {
+            constructor(...words) {
+                this.words = words;
+            }
+            //your code goes here
+            print() {
+                const indentedWords = this.words.map(word => `${word}`).join("$");
+                console.log(`$${indentedWords}$`);
+            }
+        }
+
+        var x = new Add("hehe", "hoho", "haha", "hihi", "huhu");
+        var y = new Add("this", "is", "awesome");
+        var z = new Add("lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit");
+        x.print();
+        y.print();
+        z.print();
+    </script>
+
+</html>
