@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG Color</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        color: #fff;
+        background-color: #344A53;
+        padding: 18px 30px;
+        border-radius: 6px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+    }
+
+    button:hover {
+        opacity: 0.9;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="button">
+            <button id="btn">Change Background Color</button>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById("btn");
+        const hexColors = ["#ae9f7b", "#7fdc39", "#ab5453", "#20ba33", "#0497f1", "#f22f04","#834932","#6880f8"];
+
+        
+
+        btn.addEventListener("click", () => {
+            const randomColor = hexColors[Math.floor(Math.random() * hexColors.length)];
+            document.body.style.backgroundColor = randomColor;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+.modal-container {
+    padding: 20px;
+    line-height: 1.8;
+
+}
+.modal-container {
+    margin: auto;
+    width: 100%;
+    max-width: 600px;
+    border: none;
+    border-radius: 4px;
+    transition: opacity 0.3s ease, visibility 0.3s ease,transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
+}
+
+.modal-container::backdrop {
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.container-button,
+.dialog-button {
+    margin-top: 6px;
+}
+
+.btn {
+    padding: 10px 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background-color: black;
+    color: #fff;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.dialog-button {
+    display: flex;
+    justify-content: end;
+}
