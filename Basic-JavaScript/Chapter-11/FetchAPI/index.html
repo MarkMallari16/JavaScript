@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+
+<body>
+
+    <script>
+        //fetch api
+        // fetch('mark.json')
+        //     .then((response) => {
+        //         if (!response.ok){
+        //             throw new Error(`HTTP error! Status: ${response.status}`);
+        //         }
+        //         return response.json();
+        //     }).then((data) =>{
+        //         console.log(`Data from mark.json`);
+        //         console.log(data);
+        //     }).catch((err) => {
+        //         console.log(`Rejected ${err}`);
+        //     });
+
+        //async and await
+        const getPromise = async () => {
+            const response = await fetch('mark.json');
+            const data = await response.json();
+            
+            return data;
+        }
+        
+        getPromise().then(data =>{
+            console.log('resolved: ',data);
+        }).catch(err =>{
+            console.log('Error: ', err)
+        })
+        
+
+        // const data = getPromise();
+        // console.log(data);
+    </script>
+</body>
+
+</html>

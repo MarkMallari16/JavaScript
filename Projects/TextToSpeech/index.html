@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text To Speech</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/cb37e64477.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="child">
+            <div class="header-container">
+                <h1>Text to <span class="highlight">Speech</span></h1>
+            </div>
+            <label for="textArea">Enter text:</label>
+            <div class="text-area-container">
+                <textarea name="textArea" id="textArea"></textarea>
+            </div>
+            <div class="sub-container">
+                <div class="button-container">
+                    <button id="convertBtn">Convert To Speech</button>
+                    <button id="stopBtn">Stop</button>
+                    <button id="resetBtn">Reset</button>
+                </div>
+                <div class="selection">
+                    <select name="voiceSelect" id="voiceSelect">
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script/script.js"></script>
+</body>
+
+</html>
